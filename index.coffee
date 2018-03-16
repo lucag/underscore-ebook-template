@@ -318,11 +318,10 @@ module.exports = (grunt, options = {}) ->
 
     command = joinLines """
       pandoc
-      --smart
       #{output}
       #{template}
-      --from=markdown+grid_tables+multiline_tables+fenced_code_blocks+fenced_code_attributes+yaml_metadata_block+implicit_figures+header_attributes+definition_lists+link_attributes
-      --latex-engine=xelatex
+      --from=markdown+grid_tables+multiline_tables+fenced_code_blocks+fenced_code_attributes+yaml_metadata_block+implicit_figures+header_attributes+definition_lists+link_attributes+smart
+      --pdf-engine=xelatex
       #{variables}
       #{filters}
       --top-level-division=chapter
